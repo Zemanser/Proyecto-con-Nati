@@ -16,4 +16,8 @@ He puesto una captura de pantalla al final para la evidencia.
 
 Aun no se ha usado POM.
 
-Creamos una branch con git checkout -b funcionalidad/login-demoqa
+Creamos una branch: 
+git checkout -b funcionalidad/login-demoqa
+git add .
+git commit -m "Agregando test de login a la rama funcionalidad"
+git push origin funcionalidad/login-demoqa
