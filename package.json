@@ -1,9 +1,23 @@
 {
   "name": "proyecto-con-nati",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto automatización para Nati",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:grep": "playwright test --grep",
+    "test:photos": "playwright test tests/e2e/photos.spec.ts",
+    "test:prime": "playwright test tests/e2e/prime.spec.ts",
+    "test:express": "playwright test tests/e2e/express.spec.ts",
+    "test:stroller": "playwright test tests/e2e/stroller.spec.ts",
+    "test:virtual": "playwright test tests/e2e/virtual-experiences.spec.ts",
+    "show-report": "playwright show-report",
+    "install:browsers": "playwright install",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Zemanser/Proyecto-con-Nati.git"
