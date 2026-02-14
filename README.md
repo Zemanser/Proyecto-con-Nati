@@ -1,9 +1,9 @@
 
 1. Sobre el Proyecto
-Este proyecto nace con el objetivo de asegurar la calidad en los flujos críticos de interacción con el usuario, enfocándose inicialmente en componentes dinámicos y complejos.
+Este proyecto se genera con el objetivo de asegurar la calidad en los flujos críticos de interacción con el usuario, enfocándose inicialmente en componentes dinámicos y complejos.
 
 2. Web Automatizada
-ASe automatizará LetCode.in, específicamente la sección de Calendarios y Formularios. Se eligió esta plataforma por su robustez para pruebas e2e frente a otras opciones con limitaciones de seguridad (captchas) que dificultaban la estabilidad de la integración continua.
+Se automatizará ui.toast.com, específicamente la sección de Calendarios. Se eligió esta plataforma por su robustez para pruebas e2e frente a otras opciones con limitaciones de seguridad (captchas) que dificultaban la estabilidad de la integración continua.
 
 3. Arquitectura
 Utilizaré Page Object Model (POM). Para un mejor orden del código y su posterior mantenimiento
