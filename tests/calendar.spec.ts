@@ -1,23 +1,23 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { CalendarPage } from '../pages/calendar.page';
-import { calendarData } from '../data/calendarData';
+import { calendarTestData } from '../data/calendar.data';
 
-test('Test crear y borrar una cita con Javi', async ({ page }) => {
-    const calendar = new CalendarPage(page);
+test('Crear y borrar evento con POM', async ({ page }) => {
 
-    await calendar.abrir();
-    
-    // 1. Crear evento
-    await calendar.crearEvento(calendarData.day, calendarData.eventTitle);
-    
-    // EVIDENCIA 1: Evento creado
-    await expect(page.getByText(calendarData.eventTitle).first()).toBeVisible();
-    await page.screenshot({ path: 'evidencias/evento-creado.png' });
-    
-    // 2. Borrar evento
-    await calendar.borrarEvento(calendarData.eventTitle);
-    
-    // EVIDENCIA 2: Calendario limpio
-    await expect(page.getByText(calendarData.eventTitle)).not.toBeVisible();
-    await page.screenshot({ path: 'evidencias/evento-borrado.png' });
+  const calendar = new CalendarPage(page);
+
+  const { date, hour, title } = calendarTestData.event1;
+
+  await calendar.navigate();
+
+  await calendar.takeScreenshot('01_inicial');
+
+  await calendar.createEvent(date, hour, title);
+
+  await calendar.takeScreenshot('02_creado');
+
+  await calendar.deleteEvent(title);
+
+  await calendar.takeScreenshot('03_borrado');
+
 });

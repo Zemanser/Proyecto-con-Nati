@@ -1,7 +1,7 @@
 
 # Playwright
 node_modules/
-/evidencias/
+/screenshots/
 /test-results/
 /playwright-report/
 /blob-report/

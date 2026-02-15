@@ -1,62 +1,82 @@
+# playwright-Prácticas-con-Nati
 
-1. Sobre el Proyecto
-Este proyecto se genera con el objetivo de asegurar la calidad en los flujos críticos de interacción con el usuario, enfocándose inicialmente en componentes dinámicos y complejos.
+# Proyecto de Automatización Playwright (Crear y borrar eventos de un calendario)
 
-2. Web Automatizada
-Se automatizará ui.toast.com, específicamente la sección de Calendarios. Se eligió esta plataforma por su robustez para pruebas e2e frente a otras opciones con limitaciones de seguridad (captchas) que dificultaban la estabilidad de la integración continua.
+Este proyecto contiene tests automatizados para práctica utilizando Playwright y TypeScript aplicando arquitectura Page Object Model (POM).
 
-3. Arquitectura
-Utilizaré Page Object Model (POM). Para un mejor orden del código y su posterior mantenimiento
+## Requisitos
 
-4. Instalación de Dependencias
--Tener Node.js instalado y se ejecuta:
+- Node.js ≥ 20
+- npm ≥ 10
+- Navegadores que instalará Playwright automáticamente (Chromium, Firefox, WebKit)
+
+## Instalación del proyecto
+
+1. Clonar el repositorio:
+
+``
+git clone <https://github.com/Zemanser/Proyecto-con-Nati.git>
+cd <Proyecto-con-Nati>
+
+2. Instalar dependencias:
 
 npm install
+
+3. Instalar navegadores de Playwright:
+
 npx playwright install
 
-5. Cómo Correr los Tests
-Para ejecutar todos los tests en modo headless:
+## Configuración
+
+No requiere variables de entorno actualmente.
+La URL base está definida directamente en los Page Objects o en el archivo playwright.config.ts.
+
+## Estructura del proyecto
+
+/data           -> Datos de prueba reutilizables
+/locators       -> Selectores centralizados
+/pages          -> Clases Page Object con la lógica de interacción
+/tests          -> Archivos de test
+/screenshots    -> Evidencias generadas
+playwright.config.ts
+package.json
+tsconfig.json
+README.md
+
+## Comandos disponibles
+
+# Ejecutar todos los tests:
 
 npx playwright test
 
 
-Para ver los tests en modo interactivo (UI Mode):
+# Ejecutar en modo UI:
 
 npx playwright test --ui
 
-6. Reportes
-Después de cada ejecución, generamos un reporte detallado en HTML:
+
+# Ejecutar en modo visible (no headless):
+
+npx playwright test --headed
+
+
+# Ejecutar en modo debug:
+
+npx playwright test --debug
+
+
+# Abrir HTML report:
 
 npx playwright show-report
 
-7. Integración Continua (CI)
-El proyecto está preparado para correr en GitHub Actions. Cada vez que subas código a una rama feature/ o hagas un Pull Request a main, se disparará una ejecución automática para asegurar que no hemos roto nada.
 
-8.  Organización de la Estructura
+# Ejecutar tests en un navegador específico:
 
-/
-├── src/
-│   ├── data/      # JSON/Objetos con credenciales y datos de prueba.
-│   ├── locators/  # Selectores CSS/XPath aislados por componente.
-│   ├── pages/     # Clases (Pages) con la lógica de interacción.
-├── tests/         # Scripts de prueba (.spec.ts) limpios y legibles.
-├── playwright.config.ts # Configuración global del motor.
-└── README.md
+npx playwright test --project=chromium
 
-9.  Decisiones Técnicas y por qué
-. TypeScript: Actúa como un sistema de seguridad que detecta errores mientras escribimos, avisándonos si intentamos usar datos incorrectos antes de ejecutar el test. Esto garantiza que el código sea mucho más estable y fácil de mantener, ya que el propio editor nos guía para evitar fallos lógicos.
 
-. Locators Dinámicos: En calendarios, usamos funciones en los locators para poder seleccionar cualquier fecha sin repetir código.
+# Ejecutar tests con trazas y videos (según configuración playwright.config.ts):
 
-. Movimiento de DemoQA a LetCode: Se decidió cambiar de sitio de pruebas para garantizar que las pruebas sean estables y no se vean bloqueadas por Captchas.
+npx playwright test --trace on --video retain-on-failure
 
-10. Cómo escalar el Framework
-Para añadir un nuevo módulo:
 
-1. Crea el archivo de Locators con los IDs.
-
-2. Crea la Page con los métodos necesarios.
-
-3. Define los Data si el test requiere inputs variables.
-
-4. Escribe el Test importando las piezas anteriores.
