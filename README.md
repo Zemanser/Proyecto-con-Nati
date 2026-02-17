@@ -15,8 +15,8 @@ Este proyecto contiene tests automatizados para práctica utilizando Playwright 
 1. Clonar el repositorio:
 
 ``
-git clone <https://github.com/Zemanser/Proyecto-con-Nati.git>
-cd <Proyecto-con-Nati>
+git clone https://github.com/Zemanser/Proyecto-con-Nati.git
+cd /Proyecto-con-Nati
 
 2. Instalar dependencias:
 

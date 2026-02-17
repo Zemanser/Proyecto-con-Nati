@@ -1,22 +1,16 @@
 {
-  "name": "proyecto-con-nati",
+  "name": "playwright-Prácticas-con-Nati",
   "version": "1.0.0",
   "description": "Proyecto automatización para Nati",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
-    "test:grep": "playwright test --grep",
-    "test:photos": "playwright test tests/e2e/photos.spec.ts",
-    "test:prime": "playwright test tests/e2e/prime.spec.ts",
-    "test:express": "playwright test tests/e2e/express.spec.ts",
-    "test:stroller": "playwright test tests/e2e/stroller.spec.ts",
-    "test:virtual": "playwright test tests/e2e/virtual-experiences.spec.ts",
-    "show-report": "playwright show-report",
-    "install:browsers": "playwright install",
-    "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "test:chromium": "playwright test --project=chromium",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install"
   },
   "repository": {
     "type": "git",
@@ -31,7 +25,8 @@
   },
   "homepage": "https://github.com/Zemanser/Proyecto-con-Nati#readme",
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "@types/node": "^25.2.3"
+    "@playwright/test": "^1.42.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
   }
 }
