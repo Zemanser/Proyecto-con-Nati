@@ -1,23 +1,28 @@
 {
   "name": "proyecto-con-nati",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "description": "Automatización pruebas de Login)",
+  "author": "Francisco González",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:chromium": "playwright test --project=chromium",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Zemanser/Proyecto-con-Nati.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Zemanser/Proyecto-con-Nati/issues"
-  },
   "homepage": "https://github.com/Zemanser/Proyecto-con-Nati#readme",
+  
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "@types/node": "^25.2.3"
+    "@playwright/test": "^1.42.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
   }
 }
